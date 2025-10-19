@@ -1,6 +1,333 @@
+@font-face {
+    font-family: 'Trajan-Pro';
+    src: local('Trajan-Pro'), local('Trajan Pro'),
+        url('./fonts/Trajan-Pro.ttf');
+}
+
+:root {
+    --text-color: #FDFDFD;
+    --background-color: #050505;
+
+    --cool-font-family: 'Trajan-Pro', 'Times New Roman';
+
+    --normal-cursor: url('img/cursor/normal.cur');
+    --link-cursor: url('img/cursor/link.cur');
+}
+
+h1, h2, h3 {
+    font-family: var(--cool-font-family), serif;
+}
+
+h1 {
+    font-size: 6rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
 body {
+    font-family: 'Times New Roman', 'Arial', serif;
     margin: 0;
     padding: 0;
+    color: var(--text-color);
+    background: var(--background-color);
+    cursor: var(--normal-cursor), auto;
+}
 
-    background: #292929;
+header, header > hgroup {
+    display: flex;
+    flex-direction: column;
+    justify-items: start;
+    align-items: center;
+}
+
+header > hgroup > * {
+    margin: 0.5rem auto;
+}
+
+header {
+    margin: 1em 0;
+}
+
+header > hgroup {
+    margin-top: -3rem;
+}
+
+hr {
+    height: 2.5rem;
+    border: none;
+    margin: 2rem 0 0 0;
+    background-image: url("img/frames/divider.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+:root {
+    /* Грязь, но я не знаю, как иначе */
+    --ratio1: 1080 / 659;
+    --ratio2: 640 / 640;
+    --ratio3: 1000 / 770;
+    --ratio4: 1080 / 810;
+    --ratio5: 640 / 800;
+    --flex1: calc(var(--ratio1) * var(--ratio2) / (var(--ratio1) + var(--ratio2)));
+    --flex2: calc(var(--ratio3));
+    --flex3: calc(var(--ratio4) * var(--ratio5) / (var(--ratio4) + var(--ratio5)));
+}
+
+#gallery {
+    display: flex;
+}
+
+#gallery > * {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+
+#gallery > .left_side {
+    flex: var(--flex1);
+}
+
+#gallery > .middle_side {
+    flex: var(--flex2);
+}
+
+#gallery > .right_side {
+    flex: var(--flex3);
+}
+
+#gallery > * > div {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+#gallery img {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    object-fit: contain;
+    flex: 1;
+}
+
+a:hover {
+    cursor: var(--link-cursor), auto;
+}
+
+#gallery a:hover {
+    opacity: 0.8;
+}
+
+#nav_and_biography {
+    display: flex;
+    justify-content: space-between;
+}
+
+.anchors {
+    width: 256px;
+    padding: 2rem;
+    margin: 0 2rem;
+    background-image: url("img/frames/border.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.anchors ul {
+    list-style: none;
+    padding-left: 1rem;
+    margin: 0;
+}
+
+.anchors li, #weaver_talents .desc_list dt {
+    font-family: var(--cool-font-family), serif;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+}
+
+.anchors li {
+    background-image: url("img/sigils/mode_select.png");
+    padding-left: 2rem;
+    margin: 1rem 0;
+}
+
+.anchors li a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.anchors a:hover {
+    text-shadow: 0 0 10px var(--text-color);
+}
+
+.biography {
+    margin-right: 4rem;
+    width: 70%;
+}
+
+#weaver_talents > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50vh;
+}
+
+#weaver_talents .desc_list {
+    margin: 2rem;
+    flex: 1.5;
+}
+
+#weaver_talents .desc_list dt {
+    margin: 0.75rem 0 0.5rem 0;
+    background-size: contain;
+    padding-left: 1.5rem;
+}
+
+#weaver_talents .desc_list > div {
+    transition: padding 0.3s ease-in, text-shadow 0.3s ease-in, font-size 0.3s ease-in;
+}
+
+#weaver_talents .desc_list > div:hover {
+    padding: 1rem 0;
+    text-shadow: 0 0 10px var(--text-color);
+    font-size: 1.1rem;
+}
+
+.desc_list mark {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 2px solid var(--text-color);
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+}
+
+#weaver_talents .icons {
+    flex: 2.5;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 2rem;
+}
+
+#weaver_talents .icons > img {
+    border: 2px solid var(--text-color);
+    padding: 1rem;
+    border-radius: 50%;
+}
+
+#weaver_talents .icons > img:hover {
+    filter: drop-shadow(0 0 10px var(--text-color));
+    transition: filter 0.2s ease-in-out;
+}
+
+#crests > div {
+    display: flex;
+    align-items: center;
+}
+
+#crests .art {
+    margin: 0 2rem;
+}
+
+#crests table, #crests td, #crests th {
+    margin-right: 2rem;
+    border: 2px solid var(--text-color);
+    border-collapse: collapse;
+}
+
+table td:nth-child(1) > img {
+    box-sizing: border-box;
+    max-width: 100%;
+    padding: 1rem;
+}
+
+table img {
+    padding: 0.5rem;
+}
+
+table th, table td:nth-child(2) {
+    font-family: var(--cool-font-family), serif;
+}
+
+table .higher {
+    padding: 0.5rem 0;
+}
+
+table th, table td {
+    text-align: center;
+}
+
+table td:nth-child(1) {
+    width: 15%;
+}
+
+table td:nth-child(2) {
+    width: 20%;
+}
+
+table td:nth-child(3), table td:nth-child(4), table th:nth-child(5), table th:nth-child(6) {
+    width: 5%;
+}
+
+table mark {
+    text-shadow: 0 0 10px var(--text-color);
+    background-color: transparent;
+    color: var(--text-color);
+}
+
+table strong {
+    color: crimson;
+}
+
+#quotes > div {
+    display: flex;
+    justify-content: space-around;
+}
+
+#quotes aside {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    line-height: 1.5rem;
+}
+
+#quotes aside img {
+    width: 1rem;
+}
+
+#quotes blockquote::before, #quotes blockquote::after {
+    display: block;
+    padding: 1rem;
+}
+
+#quotes blockquote::before {
+    content: url("img/frames/small_top_frame.webp")
+}
+
+#quotes blockquote::after {
+    content: url("img/frames/small_bottom_frame.webp")
+}
+
+#music .tracks {
+    display: flex;
+    justify-content: space-around;
+}
+
+.tracks > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--cool-font-family), serif;
+}
+
+footer > img {
+    width: 80%;
 }
