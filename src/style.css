@@ -116,7 +116,7 @@ a:hover {
     cursor: var(--link-cursor), auto;
 }
 
-#gallery a:hover {
+#gallery a:hover, #crests img:hover {
     opacity: 0.8;
 }
 
@@ -136,7 +136,7 @@ a:hover {
 
 .anchors ul {
     list-style: none;
-    padding-left: 1rem;
+    padding-left: 2rem;
     margin: 0;
 }
 
