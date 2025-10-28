@@ -35,11 +35,15 @@ body {
     cursor: var(--normal-cursor), auto;
 }
 
-header, header > hgroup {
+header {
     display: flex;
     flex-direction: column;
     justify-items: start;
     align-items: center;
+}
+
+header > hgroup {
+	text-align: center;
 }
 
 header > hgroup > * {
@@ -143,7 +147,6 @@ a:hover {
 .anchors li, #weaver_talents .desc_list dt {
     font-family: var(--cool-font-family), serif;
     background-repeat: no-repeat;
-    background-position: left;
     background-size: contain;
 }
 
