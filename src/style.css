@@ -40,18 +40,12 @@ header {
     flex-direction: column;
     justify-items: start;
     align-items: center;
-}
-
-header > hgroup {
-	text-align: center;
+    text-align: center;
+    margin: 1em 0;
 }
 
 header > hgroup > * {
     margin: 0.5rem auto;
-}
-
-header {
-    margin: 1em 0;
 }
 
 header > hgroup {
@@ -61,7 +55,7 @@ header > hgroup {
 hr {
     height: 2.5rem;
     border: none;
-    margin: 2rem 0 0 0;
+    margin: 2rem 0;
     background-image: url("img/frames/divider.webp");
     background-repeat: no-repeat;
     background-position: center;
@@ -79,35 +73,29 @@ hr {
     --flex3: calc(var(--ratio4) * var(--ratio5) / (var(--ratio4) + var(--ratio5)));
 }
 
-#gallery {
+.gallery {
     display: flex;
 }
 
-#gallery > * {
+.gallery > * {
     display: flex;
     height: 100%;
     flex-direction: column;
 }
 
-#gallery > .left_side {
+.gallery > .left_side {
     flex: var(--flex1);
 }
 
-#gallery > .middle_side {
+.gallery > .middle_side {
     flex: var(--flex2);
 }
 
-#gallery > .right_side {
+.gallery > .right_side {
     flex: var(--flex3);
 }
 
-#gallery > * > div {
-    display: flex;
-    flex-direction: column;
-    min-height: 0;
-}
-
-#gallery img {
+.gallery img {
     display: block;
     width: 100%;
     height: auto;
@@ -120,7 +108,7 @@ a:hover {
     cursor: var(--link-cursor), auto;
 }
 
-#gallery a:hover, #crests img:hover {
+.gallery a:hover, #crests img:hover {
     opacity: 0.8;
 }
 
@@ -130,7 +118,7 @@ a:hover {
 }
 
 .anchors {
-    width: 256px;
+    width: 16rem;
     padding: 2rem;
     margin: 0 2rem;
     background-image: url("img/frames/border.png");
@@ -290,7 +278,8 @@ table strong {
 
 #quotes aside {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
     line-height: 1.5rem;
 }
