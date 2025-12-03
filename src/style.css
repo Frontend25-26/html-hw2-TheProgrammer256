@@ -232,10 +232,12 @@ a:hover {
 .table .higher {
     grid-column: 3 / span 4;
     grid-row: 1 / span 1;
+    font-weight: bold;
 }
 
 .table .header {
     grid-row: 1 / span 2;
+    font-weight: bold;
 }
 
 .table div {
